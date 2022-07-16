@@ -3,6 +3,7 @@ from discord.ext import commands
 
 import sys, traceback
 
+
 def get_prefix(bot, message):
     '''A callable Prefix for our bot. This could be edited to allow per server prefixes.'''
     
@@ -20,7 +21,7 @@ def get_prefix(bot, message):
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'example.py' in cogs, would be cogs.example
 # Think of it like a dot path import.
-initial_extensions = ['cogs.owner', 'cogs.members', 'cogs.calculator', 'cogs.listeners']
+initial_extensions = ['cogs.owner', 'cogs.members', 'cogs.calculator', 'cogs.listeners', 'cogs.games']
 
 # Below is the description that displays in the help menu
 description = '''AilurusBot is written in Python!
@@ -38,5 +39,6 @@ async def on_ready():
     print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\n')
     print(f'Successfully logged in and booted...!')
 
-TOKEN = "OTcwNDQ4MTM1MzIxMTgyMjk5.GOO12a.Qb9t6FSwjjDF8UdN2ZmvHSOm7EjhFCfeRt74nY"    
+TOKEN = "OTcwNDQ4MTM1MzIxMTgyMjk5.GOO12a.Qb9t6FSwjjDF8UdN2ZmvHSOm7EjhFCfeRt74nY"
+    
 bot.run(TOKEN, bot=True, reconnect=True)
