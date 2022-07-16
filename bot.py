@@ -39,6 +39,6 @@ async def on_ready():
     print(f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\nVersion: {discord.__version__}\n')
     print(f'Successfully logged in and booted...!')
 
-TOKEN = "OTcwNDQ4MTM1MzIxMTgyMjk5.GOO12a.Qb9t6FSwjjDF8UdN2ZmvHSOm7EjhFCfeRt74nY"
+TOKEN = ""
     
 bot.run(TOKEN, bot=True, reconnect=True)
