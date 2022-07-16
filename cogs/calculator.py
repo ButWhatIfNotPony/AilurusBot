@@ -1,4 +1,6 @@
+import sys
 import math
+import asyncio
 import discord
 from discord.ext import commands
 
@@ -126,7 +128,7 @@ class Calculator(commands.Cog):
             
     @commands.command(name='vol', aliases=['volume'])
     @commands.guild_only()
-    async def do_volume(self, ctx, shape : str, length : float, width : float, height : float):
+    async def do_volume(self, ctx, shape : str, length : float, height : float, width : float):
         """WORKS OUT VOLUME OF 3D THINGS! (use: {shape} {values})"""
         shape == shape.lower()
         
@@ -136,6 +138,7 @@ class Calculator(commands.Cog):
             h = height
             
             vol_cube = l * w * h
+            
             await ctx.send(f'= **{vol_cube}**')
             
         elif shape == "pyramid" or "pyra":
