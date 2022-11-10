@@ -1,0 +1,5 @@
+# Ignore the TOKEN.txt file
+TOKEN.txt
+
+# Ignore __pycache__ folder
+__pycache__
