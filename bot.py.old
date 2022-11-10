@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-TOKEN = 'OTcwNDQ4MTM1MzIxMTgyMjk5.GOO12a.Qb9t6FSwjjDF8UdN2ZmvHSOm7EjhFCfeRt74nY'
+TOKEN = ''
 
 description = '''AilurusBot is written in Python!
                  Powered by a Raspberry Pi 3B+ :)'''
