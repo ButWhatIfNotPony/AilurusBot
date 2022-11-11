@@ -18,7 +18,7 @@ class Converters(commands.Cog):
     @commands.command(name='km2miles', aliases=['km2m', 'kilometers2miles'])
     async def kilometersToMiles(self, ctx, dist : float):
         """Converts Kilometers into Miles for you Imperial PEASANTS."""
-        total = dist / 1.609
+        total = round((dist / 1.609), 3)
         await ctx.send(f'{dist}KM is approximately {total} Miles.')
         
     
