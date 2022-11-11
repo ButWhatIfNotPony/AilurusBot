@@ -8,7 +8,11 @@ class Converters(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
-    
+    @commands.command(name='miles2km', aliases=['m2km', 'miles2kilometers'])
+    async def milesToKilometers(self, ctx, dist : float):
+        """Converts Miles into Kilometers for us Metric CHADS."""
+        total = dist * 1.609
+        await ctx.send(f'{dist} Miles is approximately {total}KM.')
         
     
 # The setup function below is neccersary. Remeber we give bot.add_cog() the name of the class in this case MembersCog.
