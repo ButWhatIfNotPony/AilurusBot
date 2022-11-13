@@ -58,7 +58,7 @@ class Members(commands.Cog):
     @commands.guild_only()
     async def sayHi(self, ctx):
         """Say Hi to me, and I'll respond :)"""
-        user = ctx.author
+        user = ctx.author.name
 
         if user == 'Bodin':
             response = 'Hello Server Owner OwO!'
