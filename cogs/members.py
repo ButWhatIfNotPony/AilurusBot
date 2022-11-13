@@ -62,6 +62,10 @@ class Members(commands.Cog):
 
         if user == 'Bodin':
             response = 'Hello Server Owner OwO!'
+        elif user == 'Wolfee':
+            response = 'Ew.. I don\'t want to talk to you.. I\'ve heard you are mean..'
+        elif user == '🎃windYT🎃':
+            response = 'Bruh, who even are you.. I was always told not to talk to strangers.. STRANGER DANGER!'
         else:
             response = f'Hi, {user}! How are you today? Been up to much lately? It was nice meeting you!'
 
