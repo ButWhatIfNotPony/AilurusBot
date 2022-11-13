@@ -45,9 +45,16 @@ class Converters(commands.Cog):
 
     @commands.command(name='acre2meterssqrd', aliases=['acre2msqrd', 'a2ms'])
     async def acreToMetersSqrd(self, ctx, dist : float):
-        """Converts Acres to Meters Squared."""
+        """Converts Acres into Meters Squared."""
         total = round(dist / 0.00024711, 3)
         await ctx.send(f'{dist} Acres is approximately {total}M².')
+
+    
+    @commands.command(name='meterssqrd2acre', aliases=['msqrd2acre', 'ms2a'])
+    async def metersSqrdToAcre(self, ctx, dist : float):
+        """Converts Meters Squared into Acres."""
+        total = round(dist * 0.00024711, 3)
+        await ctx.send(f'{dist}M² is approximately {total} Acres.')
 
 
     @commands.command(name='inches2centimeters', aliases=['inches2cm', 'in2cm'])
