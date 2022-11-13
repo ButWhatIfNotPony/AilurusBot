@@ -52,6 +52,21 @@ class Members(commands.Cog):
         embed.add_field(name='\uFEFF', value=perms)
         
         await ctx.send(content=None, embed=embed)
+
+
+    @commands.command(name='hi', aliases=['hey', 'hello'])
+    @commands.guild_only()
+    async def sayHi(self, ctx):
+        """Say Hi to me, and I'll respond :)"""
+        user = ctx.author.id
+
+        if user == '406566342687195138':
+            response = 'Hello Server Owner OwO!'
+        else:
+            response = f'Hi, {user}! How are you today? Been up to much lately? It was nice meeting you!'
+
+        await ctx.send(response)
+        
         
 # The setup function below is neccersary. Remeber we give bot.add_cog() the name of the class in this case MembersCog.
 # When we load the cog, we use the name of the file.
