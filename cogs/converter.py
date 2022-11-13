@@ -21,6 +21,20 @@ class Converters(commands.Cog):
         total = round((dist / 1.609), 3)
         await ctx.send(f'{dist}KM is approximately {total} Miles.')
 
+
+    @commands.command(name='meters2feet', aliases=['m2f', 'm2ft'])
+    async def metersToFeet(self, ctx, dist : float):
+        """Converts Meters into Feet."""
+        total = round(dist * 3.28084, 3)
+        await ctx.send(f'{dist}M is approximatley {total}FT.')
+
+
+    @commands.command(name='feet2meters', aliases=['f2t', 'ft2m'])
+    async def feetToMeters(self, ctx, dist : float):
+        """Converts Feet into Meters."""
+        total = round(dist * 0.3048, 3)
+        await ctx.send(f'{dist}FT is approximately {total}M.')
+
     
     @commands.command(name='celsius2fahrenheit', aliases=['c2f', 'cels2fahr'])
     async def celciusToFahrenheit(self, ctx, temp : float):
