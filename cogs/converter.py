@@ -26,13 +26,13 @@ class Converters(commands.Cog):
     async def celciusToFahrenheit(self, ctx, temp : float):
         """Converts Celsius to Fahrenheit, for whatever reason you would prefer that."""
         total = round((temp * 1.8) + 32, 3)
-        await ctx.send(f'{temp}' + chr(176) + 'C is approximatley {total}' + chr(176) + 'F.')
+        await ctx.send(f'{temp}' + chr(176) + f'C is approximatley {total}' + chr(176) + 'F.')
 
     @commands.command(name='fahr2cels', aliases=['f2c', 'fahrenheit2celsius'])
     async def fahrenheitToCelsius(self, ctx, temp : float):
         """Converts Fahrenheit to Celsius, for the better unit of temperature."""
         total = round((temp -32) * 0.5556, 3)
-        await ctx.send(f'{temp}' + chr(176) + 'F is approximately {total}' + chr(176) + 'C.')
+        await ctx.send(f'{temp}' + chr(176) + f'F is approximately {total}' + chr(176) + 'C.')
         
     
 # The setup function below is neccersary. Remeber we give bot.add_cog() the name of the class in this case MembersCog.
