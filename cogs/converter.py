@@ -25,15 +25,29 @@ class Converters(commands.Cog):
     @commands.command(name='meters2feet', aliases=['m2f', 'm2ft'])
     async def metersToFeet(self, ctx, dist : float):
         """Converts Meters into Feet."""
-        total = round(dist * 3.28084, 3)
+        total = round(dist * 3.2808, 3)
         await ctx.send(f'{dist}M is approximatley {total}FT.')
 
 
     @commands.command(name='feet2meters', aliases=['f2t', 'ft2m'])
     async def feetToMeters(self, ctx, dist : float):
         """Converts Feet into Meters."""
-        total = round(dist * 0.3048, 3)
+        total = round(dist / 3.2808, 3)
         await ctx.send(f'{dist}FT is approximately {total}M.')
+
+
+    @commands.command(name='centimeters2inches', aliases=['cm2in', 'cm2inches'])
+    async def centimetersToInches(self, ctx, dist : float):
+        """Converts Centimeters into Inches."""
+        total = round(dist * 0.39370, 3)
+        await ctx.send(f'{dist}CM is approximately {total} Inches.')
+
+
+    @commands.command(name='inches2centimeters', aliases=['inches2cm', 'in2cm'])
+    async def inchesToCentimeters(self, ctx, dist : float):
+        """Converts Inches into Centimeters."""
+        total = round(dist / 0.39370, 3)
+        await ctx.send(f'{dist} Inches is approximately {total}CM.')
 
     
     @commands.command(name='celsius2fahrenheit', aliases=['c2f', 'cels2fahr'])
