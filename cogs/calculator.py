@@ -36,7 +36,11 @@ class Calculator(commands.Cog):
     async def do_division(self, ctx, first : int, second : int):
         """DOES DIVISION! (use: {number} {number})"""
         total = first / second
-        await ctx.send(f'= **{total}**')
+        if (second == 0):
+            await ctx.send(f'You can\'t divide by 0...')
+        else:
+            await ctx.send(f'= **{total}**')
+        
         
     @commands.command(name='mod', aliases=['modulo'])
     @commands.guild_only()
