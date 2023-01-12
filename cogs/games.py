@@ -79,6 +79,50 @@ class Games(commands.Cog):
         coming = await ctx.send(f'Here it comes...')
         time.sleep(1)
         await ctx.send(f"**{random.randint(1, int(msg))}**")
+
+    
+    @commands.command(name='rps', aliases=['rockpaperscissors'])
+    @commands.guild_only()
+    async def play_RPS(self, ctx, turn=None):
+        """Play a game of Rock, Paper, Scissors! (Don't worry, its random lol)"""
+
+        turns = ["rock", "raper", "rcissors"]
+        botAnswer = random.choice(turns)
+
+        if turn == None:
+            message = await ctx.send(f'Sure, pick Rock, Paper, or Scissors:')
+
+            def check(msg):
+                return msg.author == ctx.author
+
+            message = await self.bot.wait_for("message", check=check)
+            msg = message.lower()
+
+        if msg != 'rock' or msg != 'paper' or msg != 'scissors':
+            await ctx.send(f'Please enter a valid tunr :(... Rock, Paper, or Scissors:')
+        elif msg == 'quit' or msg == 'cancel':
+            await ctx.send(f'Oh.. Ok.. Nevermind then.')
+        else:
+            if msg == botAnswer:
+                await ctx.send(f'**{botAnswer}!**')
+                time.sleep(0.5)
+                await ctx.send(f'It\'s a tie! :)')
+            elif msg == "rock" and botAnswer == "scissors":
+                await ctx.send(f'**{botAnswer}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You win!! :)')
+            elif msg == "paper" and botAnswer == "rock":
+                await ctx.send(f'**{botAnswer}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You win!! :)')
+            elif msg == "scissors" and botAnswer == "paper":
+                await ctx.send(f'**{botAnswer}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You win!! :)')
+            else:
+                await ctx.send(f'**{botAnswer}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You lose!! :)')
             
         
     
