@@ -90,7 +90,7 @@ class Games(commands.Cog):
         botAnswer = random.choice(turns)
 
         if turn == None:
-            message = await ctx.send(f'Sure, pick Rock, Paper, or Scissors:')
+            await ctx.send(f'Sure, pick Rock, Paper, or Scissors:')
 
             def check(msg):
                 return msg.author == ctx.author
