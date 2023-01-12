@@ -92,12 +92,12 @@ class Games(commands.Cog):
         if turn == None:
             await ctx.send(f'Silly human! You have to pick a move to play! :)')
 
-        playerAnswer = turn
-            
-        def check(msg):
-            return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in RPSMoves
+            def check(msg):
+                return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in RPSMoves
 
-        playerAnswer = (await self.bot.wait_for('message', check=check)).content.lower()
+            playerAnswer = (await self.bot.wait_for('message', check=check)).content.lower()
+        else:
+            playerAnswer = turn.lower()
         
         if playerAnswer == botAnswer:
             await ctx.send(f'**{botAnswer}!**')
