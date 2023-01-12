@@ -96,26 +96,26 @@ class Games(commands.Cog):
                 return msg.author == ctx.author
 
             message = await self.bot.wait_for("message", check=check)
-            msg = message.lower()
+            msg = message
 
-        if msg != 'rock' or msg != 'paper' or msg != 'scissors':
+        if msg.lower() != 'rock' or msg.lower() != 'paper' or msg.lower() != 'scissors':
             await ctx.send(f'Please enter a valid tunr :(... Rock, Paper, or Scissors:')
-        elif msg == 'quit' or msg == 'cancel':
+        elif msg.lower() == 'quit' or msg.lower() == 'cancel':
             await ctx.send(f'Oh.. Ok.. Nevermind then.')
         else:
-            if msg == botAnswer:
+            if msg.lower() == botAnswer:
                 await ctx.send(f'**{botAnswer}!**')
                 time.sleep(0.5)
                 await ctx.send(f'It\'s a tie! :)')
-            elif msg == "rock" and botAnswer == "scissors":
+            elif msg.lower() == "rock" and botAnswer == "scissors":
                 await ctx.send(f'**{botAnswer}!**')
                 time.sleep(0.5)
                 await ctx.send(f'You win!! :)')
-            elif msg == "paper" and botAnswer == "rock":
+            elif msg.lower() == "paper" and botAnswer == "rock":
                 await ctx.send(f'**{botAnswer}!**')
                 time.sleep(0.5)
                 await ctx.send(f'You win!! :)')
-            elif msg == "scissors" and botAnswer == "paper":
+            elif msg.lower() == "scissors" and botAnswer == "paper":
                 await ctx.send(f'**{botAnswer}!**')
                 time.sleep(0.5)
                 await ctx.send(f'You win!! :)')
