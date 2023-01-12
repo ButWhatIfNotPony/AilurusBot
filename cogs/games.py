@@ -95,7 +95,7 @@ class Games(commands.Cog):
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in RPSMoves
 
-        msg = await self.bot.wait_for("message", check=check)
+        msg = (await self.bot.wait_for('message', check=check)).content
         
         if msg == botAnswer:
             await ctx.send(f'**{botAnswer}!**')
