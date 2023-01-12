@@ -81,7 +81,7 @@ class Games(commands.Cog):
         await ctx.send(f"**{random.randint(1, int(msg))}**")
 
     
-    @commands.command(name='rps', aliases=['rockpaperscissors'], help="Play RPS by typing: rps [rock | paper | scissors]")
+    @commands.command(name='rps', aliases=['rockpaperscissors'], help="Play RPS by typing: rps [rock | paper | scissors] (p.s. lowercase pls)")
     @commands.guild_only()
     async def play_RPS(self, ctx, turn=None):
         """Play a game of Rock, Paper, Scissors! (Don't worry, its random lol)"""
@@ -95,7 +95,7 @@ class Games(commands.Cog):
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in RPSMoves
 
-        msg = (await self.bot.wait_for('message', check=check)).content.lower()
+        msg = (await self.bot.wait_for('message', check=check)).content
         
         if msg == botAnswer:
             await ctx.send(f'**{botAnswer}!**')
