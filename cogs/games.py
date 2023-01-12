@@ -89,7 +89,7 @@ class Games(commands.Cog):
         RPSMoves = ['rock', 'paper', 'scissors']
         botAnswer = random.choice(RPSMoves)
 
-        if turn.lower() == None or turn not in RPSMoves:
+        if turn.lower() == None:
             await ctx.send(f'Silly human! You have to pick a move to play! :)')
             
         def check(msg):
