@@ -89,14 +89,15 @@ class Games(commands.Cog):
         turns = ["rock", "raper", "rcissors"]
         botAnswer = random.choice(turns)
 
+        msg = turn
+
         if turn == None:
             await ctx.send(f'Sure, pick Rock, Paper, or Scissors:')
 
             def check(msg):
-                return msg.author == ctx.author
+                return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in turns
 
-            message = await self.bot.wait_for("message", check=check)
-            msg = message.content.lower()
+            msg = await self.bot.wait_for("message", check=check)
 
         if msg != 'rock' or msg != 'paper' or msg != 'scissors':
             await ctx.send(f'Please enter a valid turn :(... Rock, Paper, or Scissors:')
