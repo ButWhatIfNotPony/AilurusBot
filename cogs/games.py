@@ -92,8 +92,8 @@ class Games(commands.Cog):
         if PlayerMove not in RPSMoves:
             await ctx.send(f'Silly Human! {PlayerMove} isn\'t a valid move! :)')
             return
-        elif PlayerMove == None:
-            await ctx.send(f'Silly Human! {PlayerMove} isn\'t a valid move! :)')
+        elif PlayerMove == "" or PlayerMove == " ":
+            await ctx.send(f'Silly Human! Please enter a move! :)')
             return
         else:
             if PlayerMove == botMove:
