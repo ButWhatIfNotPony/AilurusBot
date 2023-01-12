@@ -83,35 +83,35 @@ class Games(commands.Cog):
     
     @commands.command(name='rps', aliases=['rockpaperscissors'], help="Play RPS by typing: rps [rock | paper | scissors] (p.s. lowercase pls)")
     @commands.guild_only()
-    async def play_RPS(self, ctx, turn=None):
+    async def play_RPS(self, ctx, turn):
         """Play a game of Rock, Paper, Scissors! (Don't worry, its random lol)"""
 
         RPSMoves = ['rock', 'paper', 'scissors']
         botAnswer = random.choice(RPSMoves)
 
-        msg = turn
-
         if turn == None:
             await ctx.send(f'Silly human! You have to pick a move to play! :)')
+
+        playerAnswer = turn
             
         def check(msg):
             return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in RPSMoves
 
-        msg = (await self.bot.wait_for('message', check=check)).content.lower()
+        playerAnswer = (await self.bot.wait_for('message', check=check)).content.lower()
         
-        if msg == botAnswer:
+        if playerAnswer == botAnswer:
             await ctx.send(f'**{botAnswer}!**')
             time.sleep(0.5)
             await ctx.send(f'It\'s a tie! :)')
-        elif msg == "rock" and botAnswer == "scissors":
+        elif playerAnswer == "rock" and botAnswer == "scissors":
             await ctx.send(f'**{botAnswer}!**')
             time.sleep(0.5)
             await ctx.send(f'You win!! :)')
-        elif msg == "paper" and botAnswer == "rock":
+        elif playerAnswer == "paper" and botAnswer == "rock":
             await ctx.send(f'**{botAnswer}!**')
             time.sleep(0.5)
             await ctx.send(f'You win!! :)')
-        elif msg == "scissors" and botAnswer == "paper":
+        elif playerAnswer == "scissors" and botAnswer == "paper":
             await ctx.send(f'**{botAnswer}!**')
             time.sleep(0.5)
             await ctx.send(f'You win!! :)')
