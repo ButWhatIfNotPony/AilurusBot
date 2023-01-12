@@ -83,45 +83,38 @@ class Games(commands.Cog):
     
     @commands.command(name='rps', aliases=['rockpaperscissors'], help="Play RPS by typing: rps [rock | paper | scissors] (p.s. lowercase pls)")
     @commands.guild_only()
-    async def play_RPS(self, ctx, turn):
+    async def play_RPS(self, ctx, turn:str):
         """Play a game of Rock, Paper, Scissors! (Don't worry, its random lol)"""
 
-        RPSMoves = ['rock', 'paper', 'scissors']
-        botAnswer = random.choice(RPSMoves)
-
-        if turn == None:
-            await ctx.send(f'Silly human! You have to pick a move to play! :)')
-
-            def check(msg):
-                return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in RPSMoves
-
-            playerAnswer = (await self.bot.wait_for('message', check=check)).content.lower()
+        RPSMoves = ["rock", "paper", "scissors"]
+        PlayerMove = turn.lower()
+        botMove = random.choice(RPSMoves)
+        if PlayerMove not in RPSMoves:
+            await ctx.send(f'Silly Human! {PlayerMove} isn\'t a valid move! :)')
+            return
         else:
-            playerAnswer = turn.lower()
-        
-        if playerAnswer == botAnswer:
-            await ctx.send(f'**{botAnswer}!**')
-            time.sleep(0.5)
-            await ctx.send(f'It\'s a tie! :)')
-        elif playerAnswer == "rock" and botAnswer == "scissors":
-            await ctx.send(f'**{botAnswer}!**')
-            time.sleep(0.5)
-            await ctx.send(f'You win!! :)')
-        elif playerAnswer == "paper" and botAnswer == "rock":
-            await ctx.send(f'**{botAnswer}!**')
-            time.sleep(0.5)
-            await ctx.send(f'You win!! :)')
-        elif playerAnswer == "scissors" and botAnswer == "paper":
-            await ctx.send(f'**{botAnswer}!**')
-            time.sleep(0.5)
-            await ctx.send(f'You win!! :)')
-        else:
-            await ctx.send(f'**{botAnswer}!**')
-            time.sleep(0.5)
-            await ctx.send(f'You lose!! :)')
+            if PlayerMove == botMove:
+                await ctx.send(f'**{botMove}!**')
+                time.sleep(0.5)
+                await ctx.send(f'It\'s a tie! :)')
+            elif PlayerMove == "rock" and botMove == "scissors":
+                await ctx.send(f'**{botMove}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You win!! :)')
+            elif PlayerMove == "paper" and botMove == "rock":
+                await ctx.send(f'**{botMove}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You win!! :)')
+            elif PlayerMove == "scissors" and botMove == "paper":
+                await ctx.send(f'**{botMove}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You win!! :)')
+            else:
+                await ctx.send(f'**{botMove}!**')
+                time.sleep(0.5)
+                await ctx.send(f'You lose!! :)')
+
             
-        
-    
 # The setup function below is neccersary. Remeber we give bot.add_cog() the name of the class in this case MembersCog.
 # When we load the cog, we use the name of the file.
 def setup(bot):
