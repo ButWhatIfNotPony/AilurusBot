@@ -86,7 +86,7 @@ class Games(commands.Cog):
     async def play_RPS(self, ctx, turn=None):
         """Play a game of Rock, Paper, Scissors! (Don't worry, its random lol)"""
 
-        turns = ["rock", "raper", "rcissors"]
+        turns = ["rock", "paper", "scissors"]
         botAnswer = random.choice(turns)
 
         msg = turn
@@ -99,9 +99,15 @@ class Games(commands.Cog):
 
             msg = await self.bot.wait_for("message", check=check)
 
-        if msg != 'rock' or msg != 'paper' or msg != 'scissors':
+        while msg not in turns:
             await ctx.send(f'Please enter a valid turn :(... Rock, Paper, or Scissors:')
-        elif msg == 'quit' or msg == 'cancel':
+            
+            def check(msg):
+                return msg.author == ctx.author and msg.channel == ctx.channel and msg.content.lower() in turns
+
+            msg = await self.bot.wait_for("message", check=check)
+
+        if msg == 'quit' or msg == 'cancel':
             await ctx.send(f'Oh.. Ok.. Nevermind then.')
         else:
             if msg == botAnswer:
