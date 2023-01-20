@@ -63,7 +63,7 @@ class Members(commands.Cog):
         if user == 'Bodin':
             response = 'Hello Server Owner OwO!'
         elif user == 'Wolfee':
-            response = 'Ew.. I don\'t want to talk to you.. I\'ve heard you are mean..'
+            response = 'AWOOOOOOO! bark bark bark woof bark woof woof! :)'
         elif user == '🎃windYT🎃':
             response = 'Bruh, who even are you.. I was always told not to talk to strangers.. STRANGER DANGER!'
         else:
