@@ -183,6 +183,17 @@ class Calculator(commands.Cog):
             
         else:
             await ctx.send(f'Sorry, the shape you selected isnt availible, please select from: cube, pyramid, cone, cylinder or sphere.')
-        
+
+    @commands.command(name='discount', aliases=['sale'])
+    @commands.guild_only()
+    async def discount_price(self, ctx, percent : float,  price : float):
+        """WORKS OUT DISCOUNTS OF PRODUCTS YOU FIND! (use: {discount percent} {price})"""
+        percentToDec = percent / 100
+        discountedPrice = price * percentToDec
+        total = price - discountedPrice
+
+        await ctx.send(f'The discounted price is **{total}** (saving you {discountedPrice})')
+
+
 def setup(bot):
     bot.add_cog(Calculator(bot))
