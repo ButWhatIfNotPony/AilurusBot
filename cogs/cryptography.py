@@ -27,9 +27,9 @@ class Cryptography(commands.Cog):
                             ')': '-.--.-' }
         # Function to encrpyt the string
         # according to the morse code chart
-        def encrypt(message):
+        def encrypt(text):
             cipher = ''
-            for letter in message:
+            for letter in text:
                 if letter != ' ':
                     # Looks up the dictionary and adds the
                     # corresponding morse code
@@ -44,13 +44,13 @@ class Cryptography(commands.Cog):
 
         # Function to decrypt the string
         # from morse to english
-        def decrypt(message):
+        def decrypt(text):
             # Extra space added at the end to access the
             # last morse code
             message += ' '
             decipher = ''
             citext = ''
-            for letter in message:
+            for letter in text:
                 # Checks for space
                 if (letter != ' '):
                     # Counter to keep track of space
@@ -73,12 +73,14 @@ class Cryptography(commands.Cog):
 
 
         method = _method.upper()
-        message = _message.upper()
+        
         if method == "ENCRYPT" or method == "E":
-            encrypted = encrypt(message)
+            eMessage = _message.upper()
+            encrypted = encrypt(eMessage)
             await ctx.send(f'Your encrypted message is: {encrypted}')
         elif method == "DECRYPT" or method == "D":
-            decrypted = decrypt(message)
+            dMessage = _message.upper()
+            decrypted = decrypt(dMessage)
             await ctx.send(f'Your decrypted message is: {decrypted}')
         else:
             await ctx.send(f'There was an error.. Please check your command input.. :(')
