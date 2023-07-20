@@ -21,7 +21,7 @@ def get_prefix(bot, message):
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'example.py' in cogs, would be cogs.example
 # Think of it like a dot path import.
-initial_extensions = ['cogs.owner', 'cogs.members', 'cogs.calculator', 'cogs.listeners', 'cogs.games', 'cogs.converter']
+initial_extensions = ['cogs.owner', 'cogs.members', 'cogs.calculator', 'cogs.listeners', 'cogs.games', 'cogs.converter', 'cogs.cryptography']
 
 # Below is the description that displays in the help menu
 description = '''AilurusBot is written in Python!
