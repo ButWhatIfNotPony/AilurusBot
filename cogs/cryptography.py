@@ -77,11 +77,11 @@ class Cryptography(commands.Cog):
         if method == "ENCRYPT" or method == "E":
             eMessage = _message.upper()
             encrypted = encrypt(eMessage)
-            await ctx.send(f'`Your encrypted message is: **{encrypted}**`')
+            await ctx.send(f'`Your encrypted message is:` **`{encrypted}`**')
         elif method == "DECRYPT" or method == "D":
             dMessage = _message.upper()
             decrypted = decrypt(dMessage)
-            await ctx.send(f'`Your decrypted message is: **{decrypted}**`')
+            await ctx.send(f'`Your decrypted message is:` **`{decrypted}`**')
         else:
             await ctx.send(f'`There was an error.. Please check your command input.. :(`')
         
