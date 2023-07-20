@@ -60,7 +60,7 @@ class Members(commands.Cog):
         """Say Hi to me, and I'll respond :)"""
         user = ctx.author.name
 
-        if user == 'Bodin1080':
+        if user == 'bodin1080':
             response = 'Hello Server Owner OwO!'
         elif user == 'burn0ut_driver':
             response = 'BRRRROOOOOOMMM!! BEEP BEEP HONK DEEP HONK HONK SKRRRRRRR'
