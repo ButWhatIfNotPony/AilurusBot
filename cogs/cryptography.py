@@ -7,7 +7,7 @@ class Cryptography(commands.Cog):
         self.bot = bot
         
     @commands.command(name='morse', aliases=['morsecode'])
-    async def morseCode(self, ctx, *, _method, _message):
+    async def morseCode(self, ctx, _method, _message):
         """Encrypts or Decrypts Morse Code messages"""
         # Dictionary representing the morse code chart
         MORSE_CODE_DICT = { 'A': '.-', 'B': '-...', 'C': '-.-.',
