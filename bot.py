@@ -27,7 +27,7 @@ initial_extensions = ['cogs.owner', 'cogs.members', 'cogs.calculator', 'cogs.lis
 description = '''AilurusBot is written in Python!
                  Powered by a Raspberry Pi 3B+ :)'''
 
-bot = commands.Bot(command_prefix=get_prefix, description=description, activity=discord.Game(name='Bamboo Eating Simulator 2022'))
+bot = commands.Bot(command_prefix=get_prefix, description=description, activity=discord.Game(name='Bamboo Eating Simulator 2023'))
 
 # Here we load our extensions(cogs) listed above in [init_exts].
 if __name__ == '__main__':
