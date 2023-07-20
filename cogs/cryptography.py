@@ -47,7 +47,7 @@ class Cryptography(commands.Cog):
         def decrypt(text):
             # Extra space added at the end to access the
             # last morse code
-            message += ' '
+            text += ' '
             decipher = ''
             citext = ''
             for letter in text:
