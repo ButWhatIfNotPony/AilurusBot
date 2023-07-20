@@ -8,7 +8,7 @@ class Cryptography(commands.Cog):
         
     @commands.command(name='morse', aliases=['morsecode'])
     async def morseCode(self, ctx, _method, _message):
-        """Encrypts or Decrypts Morse Code messages"""
+        """USE: (morse e/d "message") Encrypts or Decrypts Morse Code messages"""
         # Dictionary representing the morse code chart
         MORSE_CODE_DICT = { 'A': '.-', 'B': '-...', 'C': '-.-.',
                             'D': '-..', 'E': '.', 'F': '..-.',
@@ -77,13 +77,13 @@ class Cryptography(commands.Cog):
         if method == "ENCRYPT" or method == "E":
             eMessage = _message.upper()
             encrypted = encrypt(eMessage)
-            await ctx.send(f'Your encrypted message is: {encrypted}')
+            await ctx.send(f'`Your encrypted message is: **{encrypted}**`')
         elif method == "DECRYPT" or method == "D":
             dMessage = _message.upper()
             decrypted = decrypt(dMessage)
-            await ctx.send(f'Your decrypted message is: {decrypted}')
+            await ctx.send(f'`Your decrypted message is: **{decrypted}**`')
         else:
-            await ctx.send(f'There was an error.. Please check your command input.. :(')
+            await ctx.send(f'`There was an error.. Please check your command input.. :(`')
         
         
 # The setup function below is neccersary. Remeber we give bot.add_cog() the name of the class in this case MembersCog.
