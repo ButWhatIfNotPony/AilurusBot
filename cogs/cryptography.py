@@ -24,7 +24,7 @@ class Cryptography(commands.Cog):
                     '7':'--...', '8':'---..', '9':'----.',
                     '0':'-----', ', ':'--..--', '.':'.-.-.-',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
-                    '(':'-.--.', ')':'-.--.-' }
+                    '(':'-.--.', ')':'-.--.-', '!': '-.-.--' }
         # Function to encrpyt the string
         # according to the morse code chart
         def encrypt(text):
